@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/VisViva/LearningWebGL#readme",
   "dependencies": {
+    "express": "4.8.0",
+    "body-parser": "~1.4.2",
+    "method-override": "~2.0.2",
     "three": "^0.77.1"
   }
 }
