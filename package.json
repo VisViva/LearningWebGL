@@ -1,0 +1,22 @@
+{
+  "name": "learning_webgl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VisViva/LearningWebGL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VisViva/LearningWebGL/issues"
+  },
+  "homepage": "https://github.com/VisViva/LearningWebGL#readme",
+  "dependencies": {
+    "three": "^0.77.1"
+  }
+}
