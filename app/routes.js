@@ -14,10 +14,14 @@ module.exports = function(root){
     res.sendFile(root + '/samples/threejs_cube/index.html');
   });
 
+  Router.get('/threejs_earth', function (req, res) {
+    res.sendFile(root + '/samples/threejs_earth/index.html');
+  });
+
   // Single Page Application
 
   Router.get('*', function (req, res) {
-    res.sendFile(root + '/samples/threejs_cube/index.html');
+    res.sendFile(root + '/samples/threejs_earth/index.html');
   });
 
   return Router;

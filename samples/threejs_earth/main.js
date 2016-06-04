@@ -1,6 +1,6 @@
 void function(){
 
-  var renderer = null, scene = null, camera = null,	cube = null;
+  var renderer = null, scene = null, camera = null, objects = [], messageTypes = {};
 
   function initialize(){
     var container = document.getElementById("container");
@@ -17,25 +17,25 @@ void function(){
     light.position.set(0, 0, 1);
     scene.add(light);
 
-    var mapUrl = "../../resources/single_bit.jpg";
-    var map = THREE.ImageUtils.loadTexture(mapUrl);
-    var material = new THREE.MeshPhongMaterial({ map: map });
-    var geometry = new THREE.CubeGeometry(1, 1, 1);
-    cube = new THREE.Mesh(geometry, material);
-    cube.rotation.x = 0.5;
-    cube.rotation.y = 0.5;
-    scene.add(cube);
+    var earthmap = "../../resources/earth_diffuse.jpg";
+    var geometry = new THREE.SphereGeometry(1, 50, 50);
+    var texture = THREE.ImageUtils.loadTexture(earthmap);
+    var material = new THREE.MeshPhongMaterial({ map: texture });
+    var mesh = new THREE.Mesh(geometry, material);
+    mesh.rotation.x = 0.5;
+    objects.push(mesh);
+    scene.add(objects[0]);
 
     run();
   }
 
   function run(){
     renderer.render(scene, camera);
-    cube.rotation.y -= 0.01;
+    objects[0].rotation.y -= 0.001;
     requestAnimationFrame(run);
   }
 
   document.addEventListener("DOMContentLoaded", function(event){
     initialize();
   });
-}()
+}();
